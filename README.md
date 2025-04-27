@@ -2,7 +2,6 @@
 
 Aplicação web para consulta de informações sobre países, desenvolvida com React, TypeScript e Vite. O projeto permite pesquisar países, filtrar por região e visualizar detalhes completos de cada país, incluindo bandeira, população, capital, região, sub-região, moeda, idiomas e países de fronteira.
 
-![Imagem do Projeto]([https://imgur.com/a/YvASTad](https://imgur.com/CYNC7p6)) 
 👉 **Acesse o projeto na internet:** [which-country-app.vercel.app](https://which-country-app.vercel.app/)
 ## Funcionalidades
 
