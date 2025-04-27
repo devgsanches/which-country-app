@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router'
 
 import darkArrow from '../../assets/dark-arrow-back.svg'
 import Arrow from '../../assets/arrow-back.svg'
-import axios from 'axios'
+import { CountriesAPI } from '../../services/api'
 
 type CountryPageProps = {
   mode: boolean
@@ -68,8 +68,8 @@ export const CountryPage = ({ mode }: CountryPageProps) => {
   const { name } = useParams()
 
   const fetchCountry = useCallback(async () => {
-    const response = await axios.get(
-      `https://restcountries.com/v3.1/name/${name}?fields=name,population,capital,region,subregion,tld,currencies,languages,borders,translations,flags`
+    const response = await CountriesAPI.get(
+      `name/${name}?fields=name,population,capital,region,subregion,tld,currencies,languages,borders,translations,flags`
     )
     const country = response.data[0]
     setCountry(country)

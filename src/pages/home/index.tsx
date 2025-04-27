@@ -2,7 +2,8 @@ import { useCallback, useEffect, useState } from 'react'
 import { Card } from '../../components/Card'
 import { Search } from '../../components/Search'
 import { RegionFilter } from '../../components/RegionFilter'
-import axios from 'axios'
+
+import { CountriesAPI } from '../../services/api'
 
 type HomePageProps = {
   mode: boolean
@@ -11,7 +12,7 @@ type HomePageProps = {
 export type Country = {
   name: { common: string }
   translations: { por: { common: string } }
-  flags: { png: string, alt: string }
+  flags: { png: string; alt: string }
   population: number
   capital: string
   region: string
@@ -24,8 +25,8 @@ export const HomePage = ({ mode }: HomePageProps) => {
   const [regionSelected, setRegionSelected] = useState('')
 
   const fetchCountries = useCallback(async () => {
-    const response = await axios.get(
-      'https://restcountries.com/v3.1/alpha?codes=br,fr,arg,ang,kr,bo,dk,ru,de,es,it,jp'
+    const response = await CountriesAPI.get(
+      'alpha?codes=br,fr,arg,ang,kr,bo,dk,ru,de,es,it,jp'
     )
 
     const { data } = response
