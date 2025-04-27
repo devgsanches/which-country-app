@@ -1,54 +1,45 @@
-# React + TypeScript + Vite
+# Which Country App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web para consulta de informações sobre países, desenvolvida com React, TypeScript e Vite. O projeto permite pesquisar países, filtrar por região e visualizar detalhes completos de cada país, incluindo bandeira, população, capital, região, sub-região, moeda, idiomas e países de fronteira.
 
-Currently, two official plugins are available:
+![Imagem do Projeto](https://imgur.com/a/YvASTad) 
+👉 **Acesse o projeto na internet:** [which-country-app.vercel.app](https://which-country-app.vercel.app/)
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Pesquisa por país:** Busque países pelo nome em português.
+- **Filtro por região:** Filtre os países por continente/região (África, América, Europa, Ásia, Oceania).
+- **Detalhes do país:** Veja informações detalhadas de cada país, incluindo bandeira, população, capital, região, sub-região, moeda, idiomas e países de fronteira.
+- **Modo claro/escuro:** Interface adaptável ao modo claro e escuro.
+- **Responsivo:** Layout adaptado para todos os dispositivos (desktop, tablet e mobile).
 
-## Expanding the ESLint configuration
+## Tecnologias e Bibliotecas Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **[React](https://react.dev/):** Biblioteca principal para construção da interface.
+- **[TypeScript](https://www.typescriptlang.org/):** Tipagem estática para maior segurança e produtividade.
+- **[Vite](https://vitejs.dev/):** Ferramenta de build e desenvolvimento rápido.
+- **[Axios](https://axios-http.com/):** Requisições HTTP para consumir a API de países.
+- **[React Router](https://reactrouter.com/):** Gerenciamento de rotas e navegação entre páginas.
+- **[React Icons](https://react-icons.github.io/react-icons/):** Ícones SVG p/ interface.
+- **[Tailwind CSS](https://tailwindcss.com/):** Framework CSS para estilização rápida e responsiva.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Como rodar o projeto
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/devgsanches/which-country-app.git
+   ```
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Rode o projeto:
+   ```bash
+   npm run dev
+   ```
+4. Acesse em [http://localhost:5173](http://localhost:5173)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## API
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Os dados dos países são consumidos da [REST Countries API](https://restcountries.com/).
+
+Projeto responsivo e pronto para todos os dispositivos! 🚀
